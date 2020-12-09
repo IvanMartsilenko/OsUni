@@ -23,12 +23,12 @@ shift $((OPTIND -1))
 
 if [[ $files_num -gt 1 ]] ; then
 	for fil in "${files[@]}"; do
-		python $PROGRAM $fil &
+		python3 $PROGRAM $fil &
 	done
 elif [[ $files_num -eq 1 ]] ; then
 	while true;
 	do
-		python $PROGRAM $files &
+		python3 $PROGRAM $files &
 		counter=$((counter + 1))
 		if [[ $counter -eq $NUMBER_OF_PROCESSES ]] ; then
 			break ;

@@ -1,9 +1,9 @@
-import os
-import sys
-from multiprocessing import Process
 import time
+import sys, os
 from datetime import datetime, timedelta
+from threading import Thread
 import numpy as np
+
 
 def calculation(filename):
 	t_0 = datetime.now()
@@ -15,14 +15,12 @@ def calculation(filename):
 	_avarage = float(np.mean(_sequence))
 	t_1 = datetime.now()
 	with open(outfile, "a+") as f:
-		f.write("quantity: %d\tsum: %.6f\tavarage: %.6f" % (_quantity, _sum, _avarage))
+		f.write("quantity, sum, avarage: " + str(_quantity)+ " " + str( _sum)+ " " + str (_avarage))
 		f.write(" Execution time: %s\n" % str(t_1 - t_0))
 		f.close()
 
 
-
-
 if __name__ == "__main__":
-	proc = Thread(target=calculation, args=(sys.argv[1] ))
-	proc.start()
-	proc.join()
+	thread = Thread(target=calculation, args=(sys.argv[1], ))
+	thread.start()
+	thread.join()
