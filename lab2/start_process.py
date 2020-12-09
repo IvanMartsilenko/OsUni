@@ -16,7 +16,7 @@ def calculation(filename):
 	t_1 = datetime.now()
 	with open(outfile, "a+") as f:
 		f.write("quantity: %d\tsum: %.6f\tavarage: %.6f" % (_quantity, _sum, _avarage))
-		f.write(" Execution time: %s\n" % str(t_1 - t_0))
+		f.write("Execution time: %s\n" % str(t_1 - t_0))
 		f.close()
 
 
