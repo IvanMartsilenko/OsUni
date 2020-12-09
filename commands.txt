@@ -1,0 +1,15 @@
+lab 2
+
+threads multiple files 
+./multiply_programs_run.sh -p start_threads.py -f input1.txt -f input2.txt -f input3.txt
+
+one file multiple threads
+./multiply_programs_run.sh -p start_threads.py -f input1.txt -n 5
+processes multiple files
+./multiply_programs_run.sh -p start_process.py -f input1.txt -f input2.txt -f input3.txt
+
+one file multiple processes
+./multiply_programs_run.sh -p start_process.py -f input1.txt -n 5
+
+lab 3
+./lab3.sh
